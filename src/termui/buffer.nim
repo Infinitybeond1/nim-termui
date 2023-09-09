@@ -77,7 +77,7 @@ class TerminalBuffer:
     ## Throw an error if we are not on the same thread that first modified this buffer. This
     ## is due to nim's Seq type being entirely un-thread-safe, as in the data literally gets
     ## corrupted just by accessing it from another thread which added items to it!
-    method checkThread() =
+    method checkThread() {.gcsafe.} =
 
         # Only if thread support is enabled...
         when compileOption("threads"):
