@@ -100,7 +100,7 @@ class TermuiWidgetBase:
 
     ## Render the next frame. This can be called either on the main thread or a background thread, depending
     ## if renderInBackgroundContinuously is true or not.
-    method renderFrame() = 
+    method renderFrame() {.gcsafe.} = 
 
         # Allow subclass to update the buffer
         this.render()

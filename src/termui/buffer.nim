@@ -108,7 +108,7 @@ class TerminalBuffer:
 
 
     ## Get character at position
-    method charAt(x : int, y : int, screenBuffer : bool = false) : Character =
+    method charAt(x : int, y : int, screenBuffer : bool = false) : Character {.gcsafe.} =
 
         # Check thread
         this.checkThread()
@@ -178,7 +178,7 @@ class TerminalBuffer:
 
 
     ## Draw the change from the screen buffer
-    method draw() =
+    method draw() {.gcsafe.} =
 
         # Check thread
         this.checkThread()
