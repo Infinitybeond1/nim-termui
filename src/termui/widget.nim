@@ -54,7 +54,7 @@ class TermuiWidgetBase:
     var buffer : TerminalBuffer = TerminalBuffer.init()
 
     ## Render function, subclasses should override this and update the buffer
-    method render() = discard
+    method render() {.gcsafe.} = discard
 
     ## Called when the user inputs something on the keyboard while we are blocking
     method onInput(event : KeyboardEvent) = discard
