@@ -136,7 +136,7 @@ class TerminalBuffer:
 
 
     ## Check if a specific line is empty
-    method isLineEmpty(line : int) {.gcsafe.} : bool =
+    method isLineEmpty(line : int) : bool {.gcsafe.} =
 
         # Check thread
         this.checkThread()
