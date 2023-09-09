@@ -284,7 +284,7 @@ class TerminalBuffer:
 
 
     ## Clean up the terminal for standard output again
-    method finish() =
+    method finish() {.gcsafe.} =
 
         # Show cursor in case it was hidden
         if not this.cursorVisible:
